@@ -21,7 +21,7 @@ where the options are:
  -velvet  path      Path to the velvet bineries
  -spades  path      Path to the directory where spades.py file
  -PA      string    select one of {SPAdes, velvet} that will assemble the partitions
- -12     file      fastq file of the interlaced paired reads
+ -12      file      fastq file of the interlaced paired reads
  -ins     int       insert size of the fragments
  -std     int       standard deviation of the inset size
  -P       int       number of partitions
