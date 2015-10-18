@@ -5,9 +5,6 @@ This tool helps to apply the Hierarchical Genome Assembly (HGA) method.
 --Software version--
 This is version 1.0.0, supporting complete HGA assembly using SPAdes and velvet to assemble the partitions, for now.
 
---Software download--
-The tool is available at dna.enge.uconn.edu/
-
 --Prerequisite--
 Velvet should be installed with option 'LONGSEQUENCES=1' in the make command, to allow Velvet to accept contigs (long sequences) as input; as well and 
 'MAXKMERLENGTH=111' as the default max kmer length is 31; and 'OPENMP=1' to allow the use of multiple CPU cores on the same machine.
