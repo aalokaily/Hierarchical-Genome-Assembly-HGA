@@ -33,7 +33,7 @@ where the options are:
 
 -Output formats
 After HGA finish running, the following will be at the given output directory:
-	- All, 1-p, partitioned fastq files.
+	- All, 1-p, partitioned fastq files; and their assemblies each in folder under the name of the partition.
 	- ./combined_contigs/combined_contigs.fasta; fasta file of merging all contigs of the partitions assemblies.
 	- ./merged_contigs/merged_contigs.fasta, fasta file of combining all contigs of the partitions assemblies.
 	- ./HGA_merged/contigs.fasta (as well scaffolds.fasta); contigs of HGA(merged contigs) flow.
