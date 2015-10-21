@@ -26,7 +26,7 @@ where the options are:
  -ins     int       insert size of the fragments
  -std     int       standard deviation of the inset size
  -P       int       number of partitions
- -Pkmer   int(odd)  kmer for assembling the partions
+ -Pkmer   int(odd)  kmer value for assembling the partitions
  -Rkmer   int(odd)  kmer value for re-assembly step
  -t       int       number of threads to be used for re-assembly step using SPAdes assembler default 1
  -out     Path      output path
