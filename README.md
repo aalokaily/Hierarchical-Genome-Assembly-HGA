@@ -7,7 +7,7 @@ This is version 1.0.0, supporting complete HGA assembly using SPAdes and velvet 
 
 --Prerequisite--
 Velvet should be installed with option 'LONGSEQUENCES=1' in the make command, to allow Velvet to accept contigs (long sequences) as input; as well and 
-'MAXKMERLENGTH=111' as the default max kmer length is 31; and 'OPENMP=1' to allow the use of multiple CPU cores on the same machine.
+'MAXKMERLENGTH=111' as the default max kmer length is 31.
 
 --Installation--
 The tool is built using python; there is no need for installation.
