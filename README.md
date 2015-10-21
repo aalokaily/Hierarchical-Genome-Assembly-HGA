@@ -18,8 +18,8 @@ python HGA.py [options]
 
 where the options are:
 --Parameters--:
- -velvet  path      Path to the velvet bineries
- -spades  path      Path to the directory where spades.py file
+ -velvet  path      Path to the directory where velvet bineries (velveth, velvetg) are located
+ -spades  path      Path to the directory where spades.py file is located
  -PA      string    select one of {SPAdes, velvet} that will assemble the partitions
  -P12     file      interlaced fastq file of paired reads that will be used in the partiton step, usually raw or clean (corrected) reads
  -R12     file      interlaced fastq file of paired reads that will be used in the re-assembly step, usually raw or clean (corrected) reads
