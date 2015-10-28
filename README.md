@@ -30,7 +30,7 @@ where the options are:
  -Rkmer   int(odd)  kmer value for re-assembly step
  -t       int       number of threads to be used for re-assembly step using SPAdes assembler default 1
  -out     Path      output path
- -h                 print option menue
+ -h                 print help menue
 
 -Output formats
 After HGA finish running, the following will be at the given output directory:
