@@ -6,8 +6,8 @@ This tool helps to apply the Hierarchical Genome Assembly (HGA) method.
 This is version 1.0.0, supporting complete HGA assembly using SPAdes and velvet to assemble the partitions, for now.
 
 --Prerequisite--
-Velvet should be installed with option 'LONGSEQUENCES=1' in the make command, to allow Velvet to accept contigs (long sequences) as input; as well as 
-'MAXKMERLENGTH=111' as the default max kmer length is 31.
+Velvet should be installed with option [make 'MAXKMERLENGTH=111' 'LONGSEQUENCES=1']. 'LONGSEQUENCES=1' to allow Velvet to accept contigs (long sequences) as input; while 
+'MAXKMERLENGTH=111' to setup assembly using kmer of size up tp 111 as the default max kmer length is 31.
 
 --Installation--
 The tool is built using python; there is no need for installation.
