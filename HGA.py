@@ -184,7 +184,7 @@ def run_command(parm):
 				os.system("mkdir part_" + str(p) + "_assembly")
 				os.chdir("part_" + str(p) + "_assembly")
 				
-				print "Parition " + str(p) + " assembly started"
+				print "Partition " + str(p) + " assembly started"
 				os.popen(spades_path + "/spades.py -t " + t + " -k " + p_kmer + " --12 " + out_path + "/" + ntpath.basename(partitions_fastq_file)[:-5] + "_part_" + str(p) +".fastq" + " -o ./ ").read()
 
 		
@@ -194,7 +194,7 @@ def run_command(parm):
 				os.system("mkdir part_" + str(p) + "_assembly")
 				os.chdir("part_" + str(p) + "_assembly")
 				
-				print "Parition " + str(p) + " assembly started"
+				print "Partition " + str(p) + " assembly started"
 
 				os.popen(velvet_path+"/velveth ./ " + p_kmer + " -fastq -shortPaired "+ out_path + "/" + ntpath.basename(partitions_fastq_file)[:-5] + "_part_" + str(p) +".fastq").read()
 				os.popen(velvet_path+"/velvetg ./ -exp_cov auto -ins_length "+ insert_size +" -ins_length_sd " + std + " -scaffolding no").read()
