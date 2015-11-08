@@ -14,7 +14,7 @@ help_menue = "\nHierarchical Genome Assembly version 1.0.0\n" + \
 "--Parameters--: \n" + \
 " -velvet  path      Path to the directory where velvet bineries (velveth, velvetg) are located \n" + \
 " -spades  path      Path to the directory where spades.py file is located\n" + \
-" -PA      string    select one of {SPAdes, velvet} that will assemble the partitions\n" + \
+" -PA      string    select \"SPAdes\" or \"velvet\" to choose which assembler that will be used to assemble the partitions\n" + \
 " -P12     file      interlaced fastq file of paired reads that will be used in the partiton step, usually raw or clean (corrected) reads\n" + \
 " -R12     file      interlaced fastq file of paired reads that will be used in the re-assembly step, usually raw or clean (corrected) reads\n" + \
 " -ins     int       insert size of the fragments\n" + \
@@ -22,7 +22,7 @@ help_menue = "\nHierarchical Genome Assembly version 1.0.0\n" + \
 " -P       int       number of partitions\n" + \
 " -Pkmer   int(odd)  kmer value for assembling the partitions\n" + \
 " -Rkmer   int(odd)  kmer value for re-assembly step \n" + \
-" -t       int       number of threads to be used for re-assembly step using SPAdes assembler default 1.\n" + \
+" -t       int       number of threads to be used for re-assembly step using SPAdes assembler, default 1.\n" + \
 " -out     Path      output path\n" + \
 " -h                 print option menue\n" 
 
