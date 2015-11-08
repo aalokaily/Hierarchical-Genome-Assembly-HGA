@@ -27,7 +27,7 @@ where the options are:
 --Parameters--:
  -velvet  path      Path to the directory where velvet bineries (velveth, velvetg) are located
  -spades  path      Path to the directory where spades.py file is located
- -PA      string    select "SPAdes" or "velvet" that will assemble the partitions
+ -PA      string    select "SPAdes" or "velvet" to choose which assembler will be used to assemble the partitions
  -P12     file      interlaced fastq file of paired reads that will be used in the partiton step, usually raw or clean (corrected) reads
  -R12     file      interlaced fastq file of paired reads that will be used in the re-assembly step, usually raw or clean (corrected) reads
  -ins     int       insert size of the fragments
