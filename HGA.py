@@ -22,7 +22,7 @@ help_menue = "\nHierarchical Genome Assembly version 1.0.0\n" + \
 " -P       int       number of partitions\n" + \
 " -Pkmer   int(odd)  kmer value for assembling the partitions\n" + \
 " -Rkmer   int(odd)  kmer value for re-assembly step \n" + \
-" -t       int       number of threads to be used for re-assembly step using SPAdes assembler default 1. We noticed different results using larger than 4 threads in SPAdes multithreading, so we suggest specifying no more than 4 threads with this option.\n" + \
+" -t       int       number of threads to be used for re-assembly step using SPAdes assembler default 1.\n" + \
 " -out     Path      output path\n" + \
 " -h                 print option menue\n" 
 
