@@ -36,7 +36,7 @@ where the options are:
  -Pkmer   int(odd)  kmer value for assembling the partitions
  -Rkmer   int(odd)  kmer value for re-assembly step
  -t       int       number of threads to be used for re-assembly step using SPAdes assembler, default 1.   
- -out     Path      Absolute output path
+ -out     Path      Output path
  -h                 print help menue
 
 -Output formats
