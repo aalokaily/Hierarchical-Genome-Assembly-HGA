@@ -1,0 +1,121 @@
+
+HGA tool version 1.0
+This tool helps to apply the Hierarchical Genome Assembly (HGA) method. 
+The tool will apply:
+1. Partitioning a given reads dataset into a given number of partitions.
+2. Assembling each partitions using a pre-specified assembler (Velvet or SPAdes in this version) and using a given kmer size.
+3. Merging all the assemblies of the partition.
+4. Combining all the assemblies of the partition (using velvet with kmer value of 31).
+5. Finaly, re-assembling the whole dataset with the merged contigs or the combined contigs, using a given kmer size.
+
+--Software version--
+This is version 1.0.0, supporting complete HGA assembly using SPAdes and velvet to assemble the partitions, for now.
+
+--Prerequisite--
+Python v2.7.6. 
+Velvet should be installed with option [make 'MAXKMERLENGTH=111' 'LONGSEQUENCES=1']. 'LONGSEQUENCES=1' to allow Velvet to accept contigs (long sequences) as input;
+while 'MAXKMERLENGTH=111' to setup assembly using kmer of size up to 111 as the default max kmer length is 31.
+
+--Installation--
+The tool is built using python; there is no need for installation.
+
+--Running HGA Tool--
+Run the command 
+python HGA.py [options]
+
+where the options are:
+--Parameters--
+ -velvet  path      path to the directory where velvet bineries (velveth, velvetg) are located
+ -spades  path      path to the directory where spades.py file is located
+ -PA      string    select "SPAdes" or "velvet" to choose which assembler will be used to assemble the partitions
+ -P12     file      file of the interlaced fastq file of paired reads that will be used in the partiton step, usually raw or clean (corrected) reads
+ -R12     file      file of the interlaced fastq file of paired reads that will be used in the re-assembly step, usually raw or clean (corrected) reads
+ -ins     int       insert size of the fragments
+ -std     int       standard deviation of the inset size
+ -P       int       number of partitions
+ -Pkmer   int(odd)  kmer value for assembling the partitions
+ -Rkmer   int(odd)  kmer value for re-assembly step
+ -t       int       number of threads to be used for re-assembly step using SPAdes assembler, default 1.   
+ -out     Path      Output path
+ -h                 print help menue
+
+-Output formats--
+After HGA finish running, the following will be at the given output directory:
+	- All, 1-p, partitioned fastq files; and their assemblies each in folder under the name of the partition.
+	- ./combined_contigs/combined_contigs.fasta; fasta file of merging all contigs of the partitions assemblies.
+	- ./merged_contigs/merged_contigs.fasta, fasta file of combining all contigs of the partitions assemblies.
+	- ./HGA_merged/contigs.fasta (as well scaffolds.fasta); contigs of HGA(merged contigs) flow.
+	- ./HGA_combined/contigs.fasta (as well scaffolds.fasta); contigs of HGA(combined contigs) flow.
+	- ./HGA.log a log file of the run of the script.
+
+
+--Samples tests--
+We have created two scripts that run samples of HGA method. There are two scripts 
+"sample_test_cholera.sh" and 
+"sample_test_axonopodis.sh".
+
+
+Each script runs as follows:
+1. Download the dataset correspondent to the genome (V. cholera or X. axonopodis) from GAGE-B website.
+2. Extract the dataset.
+3. Download the script interleave_fastq.py which will be used to interleave to fastq paired reads; from
+https://gist.githubusercontent.com/ngcrawford/2232505/raw/338758f7fcca8ad24340730b96ba645c46fa1b0e/interleave_fastq.py
+4. Interleave the paired reads into one interlaced fastq file, since HGA takes as an input an interlaced fastq file.
+5. Download and install locally Velvet assembler using the recommended installation command: 
+make 'MAXKMERLENGTH=111' 'LONGSEQUENCES=1' 
+6. Download and install locally SPAdes assembler.
+7. Run HGA method using the fastq file and the local Velvet and SPAdes installations.
+8. Delete all temporary files and leave only HGA result files and a log file that stores the output of all commands in the scripts.
+
+For V. cholera HiSeq test:
+The script will create a folder under the name "Cholera_test", which contains:
+./run.log     This file contains the output of all commands used in the script.
+./HGA 	      This folder contains the files of HGA which are:
+	./HGA/HGA.log
+	./HGA/HGA_combined/contigs.fasta
+	./HGA/HGA_merged/contigs.fasta
+	./HGA/part_{x}_assembly/contigs.fasta
+
+To run the samples test, "HGA.py" must be in the same directory where the sample script is stored, then run:
+bash sample_test_cholera.sh 
+or 
+bash sample_test_axonopodis.sh
+ 
+The reported results:
+HGA Settings: Number of partitions is 4 (each partition is ~25x of coverage), kmer used to assemble each partitions is 31 using Velvet assembler, and kmer used for re-assembly is 51.
+Server specifications are: Linux platform, AMD Opteron(tm) 2.4GH, 256GB Memory, 64 core. Python v2.7.6. 
+Time: 100-120 minutes.
+Thread: 1
+N50:
+./HGA/HGA_combined/contigs.fasta         246,465   
+./HGA/HGA_merged/contigs.fasta           356,011       
+./HGA/part_1_assembly/contigs.fasta       19,443
+
+
+For X. axonopodis HiSeq test:
+The script will create a folder under the name "Axonopodis_test", which contains:
+./run.log     This file contains the output of all commands used in the script.
+./HGA 	      This folder contains the files of HGA which are:
+	./HGA/HGA.log
+	./HGA/HGA_combined/contigs.fasta
+	./HGA/HGA_merged/contigs.fasta
+	./HGA/part_{x}_assembly/contigs.fasta
+ 
+The reported results:
+HGA Settings: Number of partitions is 16 (each partition is ~15x of coverage), kmer used to assemble each partitions is 31 using Velvet assembler, and kmer used for re-assembly is 51.
+Server specifications are: Linux platform, AMD Opteron(tm) 2.4GH, 256GB Memory, 64 core. Python v2.7.6. 
+Time: 400-450 minutes.
+Thread: 1
+N50:
+./HGA/HGA_combined/contigs.fasta         118,022   
+./HGA/HGA_merged/contigs.fasta           115,197       
+./HGA/part_1_assembly/contigs.fasta       12,932
+
+
+
+--Contacts--
+For more quiries or questions, please contact
+Anas Al-okaily, aaa10013@engr.uconn.edu
+
+
+Last update: 12/2015
