@@ -69,8 +69,8 @@ make 'MAXKMERLENGTH=111' 'LONGSEQUENCES=1'
 
 For V. cholera HiSeq test:
 The script will create a folder under the name "Cholera_test", which contains:
-./run.log     This file contains the output of all commands used in the script.
-./HGA 	      This folder contains the files of HGA which are:
+./run.log     this file contains the output of all commands used in the script.
+./HGA 	      this folder contains the files of HGA which are:
 	./HGA/HGA.log
 	./HGA/HGA_combined/contigs.fasta
 	./HGA/HGA_merged/contigs.fasta
@@ -83,7 +83,7 @@ bash sample_test_axonopodis.sh
  
 The reported results:
 HGA Settings: Number of partitions is 4 (each partition is ~25x of coverage), kmer used to assemble each partitions is 31 using Velvet assembler, and kmer used for re-assembly is 51.
-Server specifications are: Linux platform, AMD Opteron(tm) 2.4GH, 256GB Memory, 64 core. Python v2.7.6. 
+Server specifications: Linux platform, AMD Opteron(tm) 2.4GH, 256GB Memory, 64 core. Python v2.7.6. 
 Time: 100-120 minutes.
 Thread: 1
 N50:
@@ -94,8 +94,8 @@ N50:
 
 For X. axonopodis HiSeq test:
 The script will create a folder under the name "Axonopodis_test", which contains:
-./run.log     This file contains the output of all commands used in the script.
-./HGA 	      This folder contains the files of HGA which are:
+./run.log     this file contains the output of all commands used in the script.
+./HGA 	      this folder contains the files of HGA which are:
 	./HGA/HGA.log
 	./HGA/HGA_combined/contigs.fasta
 	./HGA/HGA_merged/contigs.fasta
@@ -103,7 +103,7 @@ The script will create a folder under the name "Axonopodis_test", which contains
  
 The reported results:
 HGA Settings: Number of partitions is 16 (each partition is ~15x of coverage), kmer used to assemble each partitions is 31 using Velvet assembler, and kmer used for re-assembly is 51.
-Server specifications are: Linux platform, AMD Opteron(tm) 2.4GH, 256GB Memory, 64 core. Python v2.7.6. 
+Server specifications: Linux platform, AMD Opteron(tm) 2.4GH, 256GB Memory, 64 core. Python v2.7.6. 
 Time: 400-450 minutes.
 Thread: 1
 N50:
